@@ -1,6 +1,6 @@
 {
   "name": "modal-react-router",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "simple modal react router",
   "main": "lib/index.js",
   "scripts": {
@@ -14,7 +14,12 @@
     "type": "git",
     "url": "https://github.com/tehbi4/modal-react-router"
   },
-  "keywords": ["react", "router", "modal", "react-router"],
+  "keywords": [
+    "react",
+    "router",
+    "modal",
+    "react-router"
+  ],
   "author": "Anton Novik <tehbi4@gmail.com> (http://github.com/tehbi4)",
   "license": "MIT",
   "dependencies": {

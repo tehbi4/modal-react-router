@@ -7,19 +7,14 @@
     "build": "yarn && yarn run build:clean && yarn run build:lib",
     "build:clean": "rimraf lib",
     "build:lib": "babel -d lib src",
-    "prepublishOnly": "yarn run build",
+    "prepack": "yarn run build",
     "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/tehbi4/modal-react-router"
   },
-  "keywords": [
-    "react",
-    "router",
-    "modal",
-    "react-router"
-  ],
+  "keywords": ["react", "router", "modal", "react-router"],
   "author": "Anton Novik <tehbi4@gmail.com> (http://github.com/tehbi4)",
   "license": "MIT",
   "dependencies": {

@@ -1,3 +1,5 @@
+node_modules
 src/
 .babelrc
+yarn.lock
 yarn-error.log

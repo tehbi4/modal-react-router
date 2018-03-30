@@ -4,12 +4,12 @@ import { Route } from 'react-router-dom';
 
 class MyRoute extends React.Component {
   componentRender = (props) => {
-    const { ModalComponent } = this.context;
+    const { ModalComponent, modal, closeModal } = this.context;
     const { component, render } = this.props;
     const Component = component || render;
-    return this.context.modal ? (
-      <ModalComponent>
-        <Component {...props} />
+    return modal ? (
+      <ModalComponent closeModal={closeModal}>
+        <Component {...props} closeModal={closeModal} />
       </ModalComponent>
     ) : (
       <Component {...props} />
@@ -27,6 +27,7 @@ class MyRoute extends React.Component {
 MyRoute.contextTypes = {
   modal: PropTypes.bool,
   ModalComponent: PropTypes.func,
+  closeModal: PropTypes.func,
 };
 
 export default MyRoute;

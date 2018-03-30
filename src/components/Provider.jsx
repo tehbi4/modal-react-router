@@ -5,11 +5,17 @@ import { withRouter } from 'react-router-dom';
 class Provider extends React.Component {
   previousLocation = this.props.location;
 
+  constructor(props) {
+    super(props);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
   getChildContext() {
     return {
       previousLocation: this.previousLocation,
       location: this.props.location,
       ModalComponent: this.props.modalComponent,
+      closeModal: this.closeModal,
     };
   }
 
@@ -21,6 +27,10 @@ class Provider extends React.Component {
     }
   }
 
+  closeModal() {
+    this.props.history.push(this.previousLocation);
+  }
+
   render() {
     return React.Children.only(this.props.children);
   }
@@ -30,6 +40,7 @@ Provider.childContextTypes = {
   previousLocation: PropTypes.object,
   location: PropTypes.object,
   ModalComponent: PropTypes.func,
+  closeModal: PropTypes.func,
 };
 
 export default withRouter(Provider);

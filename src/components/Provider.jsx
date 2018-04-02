@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class Provider extends React.Component {
-  previousLocation = this.props.location;
+  static defaultProps = {
+    initialLocation: { pathname: '/' },
+  }
 
   constructor(props) {
     super(props);
+    this.previousLocation = props.initialLocation;
     this.closeModal = this.closeModal.bind(this);
   }
 
@@ -23,7 +26,7 @@ class Provider extends React.Component {
     const { location } = this.props;
     // set previousLocation if props.location is not modal
     if (nextProps.history.action !== 'POP' && (!location.state || !location.state.modal)) {
-      this.previousLocation = this.props.location;
+      this.previousLocation = location;
     }
   }
 

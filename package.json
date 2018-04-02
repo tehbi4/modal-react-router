@@ -1,6 +1,6 @@
 {
   "name": "modal-react-router",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "simple modal react router",
   "main": "lib/index.js",
   "scripts": {

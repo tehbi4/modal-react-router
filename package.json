@@ -3,10 +3,12 @@
   "version": "0.3.0",
   "description": "simple modal react router",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "yarn && yarn run build:clean && yarn run build:lib",
+    "lint": "tslint --config './tslint.json' --project './tsconfig.json'",
+    "build": "yarn && yarn lint && yarn run build:clean && yarn run build:lib",
     "build:clean": "rimraf lib",
-    "build:lib": "babel -d lib src",
+    "build:lib": "tsc --outDir lib",
     "prepack": "yarn run build",
     "postversion": "git push && git push --tags"
   },
@@ -30,14 +32,11 @@
     "react-router-dom": "^4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-es2015-destructuring": "^6.23.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
+    "@types/prop-types": "^15.5.2",
+    "@types/react-router-dom": "^4.2.6",
     "cross-env": "^5.1.4",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
   }
 }

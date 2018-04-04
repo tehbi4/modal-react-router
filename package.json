@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "lint": "tslint --config './tslint.json' --project './tsconfig.json'",
+    "lint": "tslint --config ./tslint.json --project ./tsconfig.json",
     "build": "yarn && yarn lint && yarn run build:clean && yarn run build:lib",
     "build:clean": "rimraf lib",
     "build:lib": "tsc --outDir lib",
